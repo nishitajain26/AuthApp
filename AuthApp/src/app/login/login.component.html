@@ -1,0 +1,41 @@
+<h1 class="header">AUTH-APP</h1>
+
+<!-- <div class="nav-buttons">
+  <button type="button" [routerLink]="['/login']">Login Page</button>
+  <button type="button" [routerLink]="['/signup']">Signup Page</button>
+</div> -->
+
+<h3>Login Page</h3>
+
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+  <div class="form-row">
+    <label for="loginName">Login Name:</label>
+    <input
+      type="text"
+      id="loginName"
+      placeholder="Enter your login name"
+      formControlName="loginName"
+    />
+    <div *ngIf="loginForm.get('loginName')?.invalid && loginForm.get('loginName')?.touched">
+      Check the login name
+    </div>
+  </div>
+
+  <div class="form-row">
+    <label for="password">Password:</label>
+    <input
+      type="password"
+      id="password"
+      placeholder="Enter your password"
+      formControlName="password"
+    />
+    <div *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched">
+      Check your password
+    </div>
+  </div>
+
+  <button type="submit">Login</button>
+   <div *ngIf="loginForm.valid" class="form-data">
+    <pre>{{ loginForm.value | json }}</pre>
+  </div>
+</form>

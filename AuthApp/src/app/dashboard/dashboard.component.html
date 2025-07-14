@@ -1,0 +1,21 @@
+<!-- <p>dashboard works!</p> -->
+<form>
+    <div class="dashboard-container">
+        <h2>Welcome to dashboard</h2>
+        <div class="profile-info">
+            <p>Your Profile Overview</p>
+            <h4>Welcome, {{userProfile.name}}</h4>
+            <p> <strong>{{userProfile.email}}</strong></p>
+
+        </div>
+        <div class="navigation">
+            <button class="btn btn-primary" (click)="navigateToProfile()">View Profile</button>
+            <!-- <button class="btn btn-success" (click)="navigateToAddUser()">Add User</button>
+            <button class="btn btn-warning" (click)="navigateToManageUsers()">Manage Users</button> -->
+        </div>
+        <div class="logout-section">
+            <button class="btn btn-danger" (click)="logout()">Logout</button>
+        </div>
+    </div>
+
+</form>

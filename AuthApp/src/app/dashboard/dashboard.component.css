@@ -1,0 +1,31 @@
+.dashboard-container {
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #499c6f;
+  text-align: center;
+  
+}
+
+.dashboard-container h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.Profile-info {
+  margin-bottom: 30px;
+}
+
+.navigation {
+  margin-bottom: 20px;
+}
+
+button {
+  margin: 5px;
+  padding: 10px 20px;
+}
+
+.logout-section {
+  margin-top: 20px;
+}

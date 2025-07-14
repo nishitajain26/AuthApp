@@ -1,0 +1,56 @@
+<h1 class="header">AUTH-APP</h1>
+
+<!-- <div class="nav-buttons">
+  <button type="button" [routerLink]="['/login']">Go to Login</button>
+  <button type="button" [routerLink]="['/signup']">Go to Signup</button>
+</div> -->
+
+<h3>Signup Page</h3>
+
+<form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+  <div class="form-row">
+    <label for="name">Name:</label>
+    <input id="name" type="text" formControlName="name" />
+    <div *ngIf="signupForm.get('name')?.invalid && signupForm.get('name')?.touched">
+      Name is required (min 4 characters)
+    </div>
+  </div>
+
+  <div class="form-row">
+    <label for="email">Email:</label>
+    <input id="email" type="email" formControlName="email" />
+    <div *ngIf="signupForm.get('email')?.invalid && signupForm.get('email')?.touched">
+      Valid email is required
+    </div>
+  </div>
+
+  <div class="form-row">
+    <label for="phoneNumber">Phone Number:</label>
+    <input id="phoneNumber" type="number" formControlName="phoneNumber" />
+    <div *ngIf="signupForm.get('phoneNumber')?.invalid && signupForm.get('phoneNumber')?.touched">
+      Valid 10-digit phone number required
+    </div>
+  </div>
+
+  <div class="form-row">
+    <label for="password">Password:</label>
+    <input id="password" type="password" formControlName="password" />
+    <div *ngIf="signupForm.get('password')?.invalid && signupForm.get('password')?.touched">
+      Password must be at least 6 characters
+    </div>
+  </div>
+
+  <div class="form-row">
+    <label for="confirmPassword">Confirm Password:</label>
+    <input id="confirmPassword" type="password" formControlName="confirmPassword" />
+    <div *ngIf="signupForm.get('confirmPassword')?.invalid && signupForm.get('confirmPassword')?.touched">
+      Passwords must match
+    </div>
+  </div>
+
+  <button type="submit">Submit</button>
+
+  <div *ngIf="signupForm.valid" class="form-data">
+    <pre>{{ signupForm.value | json }}</pre>
+  </div>
+</form>
